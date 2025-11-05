@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Item</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Adicionar Item</h2>
+
+    <% include partials/messages.ejs %>
+
+    <form action="/items" method="POST">
+      <label>Nome:</label>
+      <input type="text" name="nome" required>
+
+      <label>Descrição:</label>
+      <textarea name="descricao" rows="3"></textarea>
+
+      <label>Preço:</label>
+      <input type="text" name="preco" placeholder="Ex: 19.99" required>
+
+      <button type="submit">Salvar</button>
+    </form>
+
+    <p><a href="/list_items">Ver Itens</a> | <a href="/logout">Sair</a></p>
+  </div>
+</body>
+</html>

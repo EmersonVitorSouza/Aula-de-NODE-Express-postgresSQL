@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Cadastrar Usuário</h2>
+
+    <% include partials/messages.ejs %>
+
+    <form action="/register" method="POST">
+      <label>Usuário:</label>
+      <input type="text" name="username" required>
+
+      <label>Senha:</label>
+      <input type="password" name="password" required>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <p>Já tem conta? <a href="/login">Entrar</a></p>
+  </div>
+</body>
+</html>

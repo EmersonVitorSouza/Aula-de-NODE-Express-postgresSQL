@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Itens</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Itens Cadastrados</h2>
+
+    <% include partials/messages.ejs %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (items && items.length > 0) { %>
+          <% items.forEach(item => { %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= item.name %></td>
+              <td><%= item.description %></td>
+              <td><%= item.price.toFixed(2) %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr><td colspan="4">Nenhum item cadastrado.</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <p><a href="/items">Adicionar Novo</a> | <a href="/logout">Sair</a></p>
+  </div>
+</body>
+</html>
